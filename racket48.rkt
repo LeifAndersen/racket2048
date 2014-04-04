@@ -15,5 +15,9 @@
 (define (board-get board x y)
   (hash-ref board (Coordinate x y) (λ () 0)))
 
+(: board-set (Board Integer Integer Tile -> Board))
+(define (board-set board x y tile)
+  (hash-set board (Coordinate x y) tile))
+
 (module+ main
   (display "Hello World\n"))
